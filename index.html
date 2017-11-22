@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<style>
+
+</style>
+<center>
+<h2>Fishing Game</h2>
+
+<button onclick="getFish()" class="btn btn-default">Fish</button>
+<br>
+<p></p>
+<div class="jumbotron">
+<p id="catch">No fish caught yet</p>
+<p id="youGot"></p>
+
+<p id="1">---</p>
+<p id="2">---</p>
+<p id="3">---</p>
+<p id="4">---</p>
+<p id="5">---</p>
+<p id="6">---</p>
+</div>
+
+<script>
+
+function getFish() {
+document.getElementById("catch").innerHTML = "Fishing...";
+function getRandomInt(min, max) {
+    return Math.floor (Math.random () * (max - min + 1) ) + min;
+}
+setTimeout(findFish, getRandomInt(1000, 5000));
+}
+
+
+
+function findFish() {
+function getRandomInt(min, max) {
+    return Math.floor (Math.random () * (max - min + 1) ) + min;
+}
+var chance = getRandomInt(1, 3);
+if (chance == 1) {
+document.getElementById("catch").innerHTML = "Fish caught!";
+var fishNum = getRandomInt(1, 7);
+
+document.getElementById("youGot").innerHTML = "You caught these fish:";
+
+var first = 0;
+
+while (first <= fishNum) {
+var first = first + 1;
+document.getElementById(first).innerHTML = "Fish #" + first;
+}
+
+}
+if (chance == 2 || chance == 3) {
+document.getElementById("catch").innerHTML = "Fish escaped";
+}
+}
+
+
+</script>
